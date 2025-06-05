@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>fuckass website</title>
+  <meta charset="UTF-8">
+  <title>100 Likes</title>
   <style>
     body {
-      background-color: #1a1a1a;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 2rem;
+      background: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
     }
 
     img {
       max-width: 100%;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
 
-    button {
-      margin-top: 1rem;
-      padding: 0.5rem 1.5rem;
-      font-size: 1.2rem;
+    .like-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .like-button {
+      background: none;
       border: none;
-      border-radius: 8px;
-      background-color: #ff4081;
-      color: white;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-size: 48px;
+      transition: transform 0.1s ease;
     }
 
-    button:hover {
-      background-color: #e91e63;
+    .like-button:hover {
+      transform: scale(1.2);
     }
 
-    #like-count {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
+    .counter {
+      font-size: 24px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>100 Likes!</h1>
-  <img src="100likes.jpg" alt="100 Likes Image" />
-  <div>
-    <button onclick="incrementLikes()">Like ❤️</button>
-    <span id="like-count">Likes: 0</span>
+  <img src="100likes.jpg" alt="100 Likes">
+  
+  <div class="like-container">
+    <button class="like-button" onclick="increaseLikes()">👍</button>
+    <div class="counter" id="likeCount">0</div>
   </div>
 
   <script>
-    let likes = 0;
-    function incrementLikes() {
-      likes++;
-      document.getElementById("like-count").textContent = "Likes: " + likes;
+    let count = 0;
+    function increaseLikes() {
+      count++;
+      document.getElementById('likeCount').textContent = count;
     }
   </script>
 </body>
