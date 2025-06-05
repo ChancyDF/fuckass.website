@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>fuckass website</title>
   <style>
     body {
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
     }
+
     img {
       max-width: 100%;
       height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+
+    #like-count {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <img src="fuckass_title.gif" alt="fuckass title gif">
+  <h1>100 Likes!</h1>
+  <img src="100likes.jpg" alt="100 Likes Image" />
+  <div>
+    <button onclick="incrementLikes()">Like ❤️</button>
+    <span id="like-count">Likes: 0</span>
+  </div>
+
+  <script>
+    let likes = 0;
+    function incrementLikes() {
+      likes++;
+      document.getElementById("like-count").textContent = "Likes: " + likes;
+    }
+  </script>
 </body>
 </html>
